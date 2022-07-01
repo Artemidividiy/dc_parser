@@ -11,15 +11,21 @@ class Item:
 
 class Parser:
     def __init__(self) -> None:
-        with open("config.txt", "r") as config:
-            self.request = requests.get(url=config.readlines()[0])
-        data = self.request.json()
         self.items = list()
-        for i in data["components"]:
-            self.items.append(Item(name=i["vendor"]["name"],
-            uses_delivery= "yes" if i["vendor"]["delivery"]["provider"] == 'ddk' else "no"
-            ))
+        for i in range(4):
+            self.parse_loc(i)
     def get_items(self): return self.items
+    def parse_loc(self, config_line):
+        try: 
+            with open("config.txt", "r") as config:
+                self.nw_request = requests.get(url=config.readlines()[config_line])
+            data = self.nw_request.json()
+            for i in data["components"]:
+                self.items.append(Item(name=i["vendor"]["name"],
+                uses_delivery= "yes" if i["vendor"]["delivery"]["provider"] == 'ddk' else "no"
+                ))
+        except:
+            self.items = []
 
 if __name__ == "__main__" :
     parser = Parser()

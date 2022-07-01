@@ -1,1 +1,4 @@
 https://api.delivery-club.ru/api1.3/screen/web/components?limit=300&offset=0&latitude=55.7577374&longitude=37.6164793&fastFilters=group&cityId=1&cacheBreaker=1656704650
+https://api.delivery-club.ru/api1.3/screen/web/components?latitude=55.764806&longitude=37.561395&cityId=1&cacheBreaker=1656704650&limit=4000&offset=0
+https://api.delivery-club.ru/api1.3/screen/web/components?latitude=55.821026&longitude=37.640827&cityId=1&cacheBreaker=1656704650&limit=4000&offset=0
+https://api.delivery-club.ru/api1.3/screen/web/components?latitude=55.658348&longitude=37.496230&cityId=1&cacheBreaker=1656704650&limit=4000&offset=0
