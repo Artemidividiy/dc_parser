@@ -1,0 +1,1 @@
+https://api.delivery-club.ru/api1.3/screen/web/components?limit=300&offset=0&latitude=55.7577374&longitude=37.6164793&fastFilters=group&cityId=1&cacheBreaker=1656704650
