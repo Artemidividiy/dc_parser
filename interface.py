@@ -1,5 +1,6 @@
 import streamlit as st
 import parser
+from rich.console import Console
 from streamlit_echarts import st_echarts
 class Interface:
     def __init__(self) -> None:

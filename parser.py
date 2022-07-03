@@ -18,13 +18,19 @@ class Parser:
     def parse_loc(self, config_line):
         try: 
             with open("config.txt", "r") as config:
+                Console().log(f"file: {config.readlines()}, len {len(config.readlines())}")
                 self.nw_request = requests.get(url=config.readlines()[config_line])
+            Console().print(f"[cyan] request successful [/] {self.nw_request.status_code}")
             data = self.nw_request.json()
+            Console().print(len(data)) if data else Console().print("[bold yellow] cannot fetch data[/]")
             for i in data["components"]:
                 self.items.append(Item(name=i["vendor"]["name"],
                 uses_delivery= "yes" if i["vendor"]["delivery"]["provider"] == 'ddk' else "no"
                 ))
+            self.items = list(set(self.items))
+            Console().print(self.items)
         except:
+            Console().print("[bold red]something went wrong[/]")
             self.items = []
 
 if __name__ == "__main__" :
