@@ -34,8 +34,8 @@ class Interface:
                     },
                     "labelLine": {"show": False},
                     "data": [
-                        {"value": pie_uses_delivery[0], "name": "yes"},
-                        {"value": pie_uses_delivery[1], "name": "no"},
+                        {"value": pie_uses_delivery[0], "name": "uses delivery club service"},
+                        {"value": pie_uses_delivery[1], "name": "doesn't use delivery club service"},
                     ],
                 }
             ],

@@ -27,8 +27,10 @@ class Parser:
                 self.items.append(Item(name=i["vendor"]["name"],
                 uses_delivery= "yes" if i["vendor"]["delivery"]["provider"] == 'ddk' else "no"
                 ))
-            self.items = list(set(self.items))
-            Console().print(self.items)
+            new_items = []
+            for i in self.items:
+                if i not in new_items: new_items.append(i)
+            self.items = new_items
         except:
             Console().print("[bold red]something went wrong[/]")
             self.items = []
